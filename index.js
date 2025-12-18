@@ -126,3 +126,29 @@ function ispowerofbase(n) {
 console.log(ispowerofbase(1));
 console.log(ispowerofbase(5));
 console.log(ispowerofbase(4));
+
+//recursion
+
+// find the nth element of the fibbonacci sequence giving the number n
+
+function nthEl(n) {
+  let base = [0, 1];
+
+  for (let i = 2; i < n + 1; i++) {
+    base.push(base[i - 1] + base[i - 2]);
+  }
+
+  console.log(base[n]);
+}
+
+nthEl(5);
+
+// recurcively;
+
+function recurciveNth(n) {
+  if (n < 2) return n;
+
+  return recurciveNth(n - 1) + recurciveNth(n - 2);
+}
+
+console.log(recurciveNth(5));
