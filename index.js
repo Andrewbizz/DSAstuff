@@ -114,16 +114,15 @@
 
 // therefore if n%2 === 0 then it is a power of two
 
-function ispowerofBase(n, b) {
-  if (n <= 0) return false;
+function ispowerofbase(n) {
+  if (n < 1) return false;
 
-  for (; n % b === 0; n = n / b) {
-    console.log(n);
-  }
-  console.log(n);
-  if (n === 1) {
-    return true;
-  } else return false;
+  let base = 2;
+
+  for (; n % base === 0; n = n / base) {}
+
+  return n === 1;
 }
-
-console.log(ispowerofBase(282429536481, 3));
+console.log(ispowerofbase(1));
+console.log(ispowerofbase(5));
+console.log(ispowerofbase(4));
