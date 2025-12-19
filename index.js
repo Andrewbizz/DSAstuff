@@ -131,24 +131,25 @@ console.log(ispowerofbase(4));
 
 // find the nth element of the fibbonacci sequence giving the number n
 
-function nthEl(n) {
-  let base = [0, 1];
+// function nthEl(n) {
+//   let base = [0, 1];
 
-  for (let i = 2; i < n + 1; i++) {
-    base.push(base[i - 1] + base[i - 2]);
-  }
+//   for (let i = 2; i < n + 1; i++) {
+//     base.push(base[i - 1] + base[i - 2]);
+//   }
 
-  console.log(base[n]);
-}
+//   console.log(base[n]);
+// }
 
-nthEl(5);
+// nthEl(5);
 
 // recurcively;
 
-function recurciveNth(n) {
-  if (n < 2) return n;
+function recurciveFib(n) {
+  if (n === 0) return 0;
+  if (n === 1) return 1;
 
-  return recurciveNth(n - 1) + recurciveNth(n - 2);
+  return recurciveFib(n - 1) + recurciveFib(n - 2);
 }
 
-console.log(recurciveNth(5));
+console.log(recurciveFib(5));
