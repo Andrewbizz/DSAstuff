@@ -83,17 +83,17 @@
 
 // factorial(5);
 
-// function factorial(n) {
-//   let res = 1;
+function factorial(n) {
+  let res = 1;
 
-//   for (let i = 1; i < n; i++) {
-//     res = res * (i + 1);
-//   }
+  for (let i = 1; i < n; i++) {
+    res = res * (i + 1);
+  }
 
-//   return res;
-// }
+  return res;
+}
 
-// console.log(factorial(5));
+console.log(factorial(5));
 
 // function isPrime(n) {
 //   for (let i = 2; i < n && n > 1; i++) {
@@ -114,18 +114,18 @@
 
 // therefore if n%2 === 0 then it is a power of two
 
-function ispowerofbase(n) {
-  if (n < 1) return false;
+// function ispowerofbase(n) {
+//   if (n < 1) return false;
 
-  let base = 2;
+//   let base = 2;
 
-  for (; n % base === 0; n = n / base) {}
+//   for (; n % base === 0; n = n / base) {}
 
-  return n === 1;
-}
-console.log(ispowerofbase(1));
-console.log(ispowerofbase(5));
-console.log(ispowerofbase(4));
+//   return n === 1;
+// }
+// console.log(ispowerofbase(1));
+// console.log(ispowerofbase(5));
+// console.log(ispowerofbase(4));
 
 //recursion
 
@@ -145,11 +145,40 @@ console.log(ispowerofbase(4));
 
 // recurcively;
 
-function recurciveFib(n) {
-  if (n === 0) return 0;
-  if (n === 1) return 1;
+// function recurciveFib(n) {
+//   if (n === 0) return 0;
+//   if (n === 1) return 1;
 
-  return recurciveFib(n - 1) + recurciveFib(n - 2);
+//   const oncut = recurciveFib(n - 1) + recurciveFib(n - 2);
+
+//   return oncut;
+// }
+
+// console.log(recurciveFib(5));
+
+// function factorialx(n) {
+//   if (n <= 1) return 1;
+
+//   return n * factorialx(n - 1);
+// }
+
+// console.log(factorialx(5));
+
+// first attempt at linear search
+
+// given an array of n elements and target element of t,
+// find the index of t in the array, return -1
+// if the target element is not found
+function findIndex(n, t) {
+  let arr = [n];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === t) {
+      return i;
+    }
+  }
+
+  return -1;
 }
 
-console.log(recurciveFib(5));
+console.log(findIndex([8, 65, 3, 67, 5, 76, 7], 5));
