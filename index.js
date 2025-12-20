@@ -83,17 +83,17 @@
 
 // factorial(5);
 
-function factorial(n) {
-  let res = 1;
+// function factorial(n) {
+//   let res = 1;
 
-  for (let i = 1; i < n; i++) {
-    res = res * (i + 1);
-  }
+//   for (let i = 1; i < n; i++) {
+//     res = res * (i + 1);
+//   }
 
-  return res;
-}
+//   return res;
+// }
 
-console.log(factorial(5));
+// console.log(factorial(5));
 
 // function isPrime(n) {
 //   for (let i = 2; i < n && n > 1; i++) {
@@ -169,16 +169,59 @@ console.log(factorial(5));
 // given an array of n elements and target element of t,
 // find the index of t in the array, return -1
 // if the target element is not found
-function findIndex(n, t) {
-  let arr = [n];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === t) {
-      return i;
+// function findIndex(n, t) {
+//   let arr = [n];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === t) {
+//       return i;
+//     }
+//   }
+
+//   return -1;
+// }
+
+// console.log(findIndex([8, 65, 3, 67, 5, 76, 7], 5));
+
+// what worked
+
+// function findIndex(n, t) {
+//   for (let i = 0; i < n.length; i++) {
+//     if (n[i] === t) {
+//       return i;
+//     }
+//   }
+
+//   return -1;
+// }
+
+// console.log(findIndex([8, 65, 3, 67, 5, 76, 7], 5));
+
+// binary search today
+
+// 0 + 5 = 2
+// arr[2] = 30
+
+function binarySearch(arr, targ) {
+  let low = 0;
+  let high = arr.length - 1;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+
+    if (arr[mid] === targ) {
+      return mid;
+    }
+
+    if (targ > arr[mid]) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
     }
   }
 
   return -1;
 }
 
-console.log(findIndex([8, 65, 3, 67, 5, 76, 7], 5));
+console.log(binarySearch([10, 20, 30, 40, 50, 60], 50));
