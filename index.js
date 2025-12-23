@@ -203,18 +203,116 @@
 // 0 + 5 = 2
 // arr[2] = 30
 
-function binarySearch(arr, targ) {
+// function binarySearch(arr, targ) {
+//   let low = 0;
+//   let high = arr.length - 1;
+
+//   while (low <= high) {
+//     let mid = Math.floor((low + high) / 2);
+
+//     if (arr[mid] === targ) {
+//       return mid;
+//     }
+
+//     if (targ > arr[mid]) {
+//       low = mid + 1;
+//     } else {
+//       high = mid - 1;
+//     }
+//   }
+
+//   return -1;
+// }
+
+// console.log(binarySearch([10, 20, 30, 40, 50, 60], 50));
+
+// problem revisit
+
+// function summation(n) {
+//   let res = 0;
+
+//   for (let i = 1; i <= n; i++) {
+//     res = i + res;
+//   }
+
+//   console.log(res);
+// }
+
+// summation(5);
+
+// given the Number  n find the first n elements of the fibbonacci sequence
+
+// function fibbonacci(n) {
+//   const base = [0, 1];
+
+//   for (let i = 2; i <= n; i++) {
+//     base.push(base[i - 1] + base[i - 2]);
+//   }
+
+//   console.log(base);
+// }
+
+// fibbonacci(20);
+
+// factorial of a Number
+// given an integer n, find the factorial of that integer
+// product (result of multiplication) of all the positive numbers less than  or equal to N
+// function factorial(n) {
+//   let fact = 1;
+
+//   for (let i = 2; i <= n; i++) {
+//     fact = i * fact;
+//   }
+
+//   console.log(fact);
+// }
+
+// factorial(5);
+
+// test for primality
+// given a natural number n determine if the number is prime or not
+
+// function isPrime(n) {
+//   if (n < 2) {
+//     return false;
+//   }
+//   for (let i = 2; i < n; i++) {
+//     if (n % i === 0) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+
+// console.log(isPrime(5));
+// console.log(isPrime(6));
+
+function isPowerofTwo(n) {
+  for (; n % 2 === 0; n / 2) {
+    return true;
+  }
+
+  return false;
+}
+
+console.log(isPowerofTwo(12));
+
+// given an array of n elements and target element of t,
+// find the index of t in the array, return -1
+// if the target element is not found
+
+function findIndex(arr, t) {
   let low = 0;
   let high = arr.length - 1;
-
   while (low <= high) {
     let mid = Math.floor((low + high) / 2);
 
-    if (arr[mid] === targ) {
+    if (arr[mid] === t) {
       return mid;
     }
 
-    if (targ > arr[mid]) {
+    if (arr[mid] < t) {
       low = mid + 1;
     } else {
       high = mid - 1;
@@ -224,4 +322,4 @@ function binarySearch(arr, targ) {
   return -1;
 }
 
-console.log(binarySearch([10, 20, 30, 40, 50, 60], 50));
+console.log(findIndex([21, 22, 23, 24, 25, 26, 27, 28], 24));
